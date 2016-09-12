@@ -1,0 +1,26 @@
+{
+  "name": "vue-pagination",
+  "version": "0.1.0",
+  "description": "vue-pagination-component",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengyun2/vue-pagination.git"
+  },
+  "keywords": [
+    "vue",
+    "pagination"
+  ],
+  "author": "LY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengyun2/vue-pagination/issues"
+  },
+  "homepage": "https://github.com/fengyun2/vue-pagination#readme",
+  "dependencies": {
+    "vue": "^1.0.26"
+  }
+}

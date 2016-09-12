@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>pagination</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+    .page ul {
+        list-style: none;
+        margin-top: 10px;
+    }
+    .page ul li {
+        margin: 0 5px;
+    }
+    .page ul li,
+    .page-link {
+        display: inline-block;
+        width: 40px;
+        line-height: 40px;
+        height: 40px;
+        background-color: #F0F0F0;
+        color: #ABABAB;
+        border-radius: 3px;
+        text-align: center;
+        text-decoration: none;
+    }
+    .page ul li .cur_page {
+        background-color: #81C06F;
+        color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+<div class="page" id="page">
+    <ul>
+        <li><a href="javascript:void(0);" class="page-link" @click="setPage(cur_page-1)"><</a></li>
+        <li v-for="n in page_count">
+            <a href="javascript:void(0);" class="page-link" v-text="n+1" @click="setPage(n+1)" :class="{cur_page: n+1 == cur_page}"></a>
+        </li>
+        <li><a href="javascript:void(0);" class="page-link" @click="setPage(cur_page+1)">></a></li>
+    </ul>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js">
+
+</script>
+
+<script>
+    new Vue({
+        el: '#page',
+        data: {
+            page_count: 5, // 总页数
+            cur_page: 1 // 当前页数
+        },
+        methods: {
+            // 切换页码
+            setPage(num) {
+                // 页码小于或等于1
+                if(num<=1) {
+                    return this.cur_page = 1
+                }
+                // 页码大于总页数
+                if(num>=this.page_count) {
+                    return this.cur_page = this.page_count
+                }
+                // 页码赋给当前页
+                this.cur_page = num
+            }
+        }
+    })
+</script>
+</body>
+
+</html>
