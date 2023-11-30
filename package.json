@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/fengyun2/vue-pagination#readme",
   "dependencies": {
-    "vue": "^1.0.26"
+    "vue": "^2.0.0"
   }
 }
